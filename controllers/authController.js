@@ -15,6 +15,11 @@ exports.registerUser = async (req, res) => {
   const { name, email, password, role, licenceNumber, adminLevel } = req.body;
 
   try {
+    // Only admin can register users
+    if (!req.user || req.user.role !== 'admin') {
+      return res.status(403).json({ message: 'Access denied: Only admins can register users' });
+    }
+
     // Check if user already exists
     const existing = await User.findOne({ where: { email } });
     if (existing) return res.status(400).json({ message: 'User already exists' });

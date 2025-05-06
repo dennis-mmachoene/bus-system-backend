@@ -24,7 +24,7 @@ exports.protect = async (req, res, next) => {
 exports.authorizeRoles = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return res.status(403).json({ message: `Access denied for ${req.user.role}` });
+      return res.status(403).json({ message: `Only admin must register Users` });
     }
     next();
   };
