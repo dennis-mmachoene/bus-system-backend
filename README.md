@@ -3,7 +3,7 @@
 This is the backend for the Bus System application. Below is an overview of the project structure and the purpose of each directory:
 
 ## Project Structure
-
+```
 ├── config/                         # Configuration files for the application 
 │ │
 │ └── database.js                   # Database connection and configuration 
@@ -63,7 +63,7 @@ This is the backend for the Bus System application. Below is an overview of the 
 ├── server.js                       # Entry point of the application 
 │
 ├── README.md                       # Project documentation 
-
+```
 Start the server:
 npm start
 The server will run on http://localhost:5000 by default.
